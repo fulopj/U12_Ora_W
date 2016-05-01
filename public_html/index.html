@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Orientation</title>
+    </head>
+
+    <body>
+        <div>
+            <button id="Telefon">Telefon</button>
+            <button id="SMS">SMS</button>
+            <button id="Email">Email</button>
+        </div>
+
+
+        <script type="text/javascript">
+            document.getElementById("Telefon").addEventListener("click", function () {
+                var call = new MozActivity({name: "dial", data: {number: "+36303392056"}});
+            });
+
+            document.getElementById("SMS").addEventListener("click", function () {
+                var call = new MozActivity({name: "new", data: {type: "websms/sms", number: "+36303392056"}});
+            });
+
+            document.getElementById("Email").addEventListener("click", function () {
+                var call = new MozActivity({name: "new", data: {type: "mail"}});
+            });
+        </script>
+    </body>
+
+</html>
